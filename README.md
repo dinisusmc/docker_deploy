@@ -5,7 +5,7 @@ https://github.com/dinisusmc/docker_deploy.git
 
 
 
-# ** 1. ** Run API on Gcloud VM
+# **1.** Run API on Gcloud VM
 
 ## Run local bash file to launch vm to host api
 #### ** Note ** You should have gcloud initialized and configured
