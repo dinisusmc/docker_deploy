@@ -1,12 +1,12 @@
 # This is a simple example web app that is meant to illustrate the basics.
 from flask import Flask, render_template, redirect, g, request, url_for
 import requests
-
+## Running on same machine
 #ip = requests.get('https://checkip.amazonaws.com').text.strip()+":5001"
 
 app = Flask(__name__)
 
-ip = "192.168.1.169:5001"
+ip = "34.48.120.142:5001"
 
 @app.route("/")
 def show_list():
