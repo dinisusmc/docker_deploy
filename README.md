@@ -1,10 +1,22 @@
-# Deploying an app onto Google Kubernetes 
-
-## **You must update the IP address in todolist.py to reflect which ever IP your api is on**
+# How to host an api on Google Cloud VM and deploy a webserver to a Google Kubernetes Cluster
 
 ## Clone this repository;
 https://github.com/dinisusmc/docker_deploy.git
 
+
+
+# ** 1. ** Run API on Gcloud VM
+
+## Run local bash file to launch vm to host api
+#### ** Note ** You should have gcloud initialized and configured
+
+sh ./local.sh
+
+
+
+# ** 2. ** Deploying an web server onto Google Kubernetes Cluster
+
+## ** Note ** You must update the IP address in todolist.py to reflect which ever IP your api is on
 
 ## create docker image repository in gke
 gcloud artifacts repositories create flask-ims \                                                               
@@ -13,11 +25,9 @@ gcloud artifacts repositories create flask-ims \
     --location=us-east4 \
     --description="Docker repository"
 
-
 ## Build image on gke;
 gcloud builds submit \
   --tag us-east4-docker.pkg.dev/cisc5550-430923/flask-ims/gunicorn-gke ./docker_deploy.zip
-
 
 ## create a gke cluster
 gcloud container clusters create-auto gunicorn-gke \
@@ -40,7 +50,7 @@ kubectl get services
 
 
 
-# When Finished run these to delete resources
+# ** 3. ** When Finished run these to delete resources
 
 ## Delete Clusters
 gcloud container clusters delete gunicorn-gke \
