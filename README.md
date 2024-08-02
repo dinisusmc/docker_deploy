@@ -8,15 +8,15 @@ https://github.com/dinisusmc/docker_deploy.git
 # **1.** Run API on Gcloud VM
 
 ## Run local bash file to launch vm to host api
-#### ** Note ** You should have gcloud initialized and configured
+#### **Note** You should have gcloud initialized and configured
 
 sh ./local.sh
 
 
 
-# ** 2. ** Deploying an web server onto Google Kubernetes Cluster
+# **2.** Deploying an web server onto Google Kubernetes Cluster
 
-## ** Note ** You must update the IP address in todolist.py to reflect which ever IP your api is on
+## **Note** You must update the IP address in todolist.py to reflect which ever IP your api is on
 
 ## create docker image repository in gke
 gcloud artifacts repositories create flask-ims \                                                               
@@ -50,7 +50,7 @@ kubectl get services
 
 
 
-# ** 3. ** When Finished run these to delete resources
+# **3.** When Finished run these to delete resources
 
 ## Delete Clusters
 gcloud container clusters delete gunicorn-gke \
