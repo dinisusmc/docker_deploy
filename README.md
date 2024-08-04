@@ -14,7 +14,7 @@ sh ./local.sh
 
 
 
-# **2.** Deploying an web server onto Google Kubernetes Cluster
+# **2.** Deploying a web server onto Google Kubernetes Cluster
 
 ## **Note** You must update the IP address in todolist.py to reflect which ever IP your api is on
 
