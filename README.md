@@ -20,14 +20,14 @@ sh ./local.sh
 
 ## create docker image repository in gke
 gcloud artifacts repositories create flask-ims \                                                               
-    --project=cisc5550-430923 \
+    --project=<project-id> \
     --repository-format=docker \
     --location=us-east4 \
     --description="Docker repository"
 
 ## Build image on gke;
 gcloud builds submit \
-  --tag us-east4-docker.pkg.dev/cisc5550-430923/flask-ims/gunicorn-gke ./docker_deploy.zip
+  --tag us-east4-docker.pkg.dev/<project-id>/flask-ims/gunicorn-gke ./docker_deploy.zip
 
 ## create a gke cluster
 gcloud container clusters create-auto gunicorn-gke \
@@ -58,4 +58,4 @@ gcloud container clusters delete gunicorn-gke \
 
 ## Delete Images
 gcloud artifacts docker images delete \
-    us-east4-docker.pkg.dev/cisc5550-430923/flask-ims/gunicorn-gke
+    us-east4-docker.pkg.dev/<project-id>/flask-ims/gunicorn-gke
